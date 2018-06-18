@@ -30,7 +30,3 @@ echo "Removing uavpal softmod installation files"
 rm -rf /data/ftp/beboptwo4g*
 echo "All done! :)"
 echo
-
-
-
-change all paths in wiki to internal_000 (symlink does not work in filezilla)
