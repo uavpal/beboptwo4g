@@ -18,6 +18,6 @@ echo "Removing uavpal softmod files"
 rm -rf /data/ftp/internal_000/uavpal
 rm -f /data/ftp/uavpal
 echo "Removing uavpal softmod installation files"
-rm -rf /data/ftp/beboptwo4g*
+rm -rf /data/ftp/internal_000/beboptwo4g*
 echo "All done! :)"
 echo
