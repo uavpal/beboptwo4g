@@ -26,12 +26,12 @@ Cons:
 - Because we can :grin:
 
 ## How does it work?
-![High-level connection diagram](https://preview.ibb.co/c8qPP7/disco4g_highlevel_diagram_end2end.png)
+![High-level connection diagram](https://uavpal.com/img/beboptwo4g_highlevel_diagram_end2end.png)
 
 In simple terms, the Wi-Fi connection is hijacked and routed via a tethering device (e.g. mobile phone) through a 4G/LTE cellular/mobile network to the Bebop 2. As tethering device, any modern mobile phone can be used (iOS: "Personal Hotspot" or Android: "Portable WLAN hotspot").
 The Bebop 2 requires a 4G/LTE USB modem to be able to send and receive data via cellular/mobile networks.
 
-![USB Modem inside Disco's canopy](https://preview.ibb.co/g5rgNS/modem_in_disco.jpg)
+![USB Modem plugged into Bebop 2](https://uavpal.com/img/beboptwo4g-yellow-with-sc2.jpg)
 
 Initiation of the 4G/LTE connection (and switch back to Wi-Fi) can be done by simply pressing the Settings button twice on Skycontroller 2.
 
