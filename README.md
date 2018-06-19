@@ -54,7 +54,10 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 ## Requirements
 *Hardware:*
 - Parrot Bebop 2 drone
-- Parrot Skycontroller 2 (Skycontroller 2P with the black joysticks is not yet supported!)
+- Parrot Skycontroller 2 (Skycontroller 2P with the black joysticks is not yet supported!)\
+*Note:* this will not work with the classic Skycontroller which was sold with the Bebop 2 in a special bundles.
+![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
+
 - [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) and SIM card\
 Note: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
 - USB OTG cable (ca. 5-10 cm recommended)
@@ -87,7 +90,7 @@ Please see Wiki article [FAQ](https://github.com/uavpal/beboptwo4g/wiki/FAQ).
 
 ## Is it really free? Are you crazy?
 Yes and yes! This softmod has been developed over countless of days and nights by RC hobbyists and technology enthusiasts with zero commercial intention.
-Anyone can download our code for free and transform his/her Disco into a 4G/LTE enabled fixed-wing drone by following the instructions provided.
+Anyone can download our code for free and transform his/her Bebop 2 into a 4G/LTE enabled drone by following the instructions provided.
 
 _However_, we highly appreciate [feedback and active contribution](#contactcontribute) to improve and maintain this project.
 
@@ -98,7 +101,7 @@ If you insist, feel free to donate any amount you like. We will mainly use donat
 [![Donate using Paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GY3BTZPLPBB2W&lc=US&item_name=UAVPAL&cn=Add%20special%20instructions%3A&no_shipping=1&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
 ## Contact/Contribute
-Join our [UAVPAL Slack workspace](https://join.slack.com/t/uavpal/shared_invite/enQtMzQ4NDA5NzU0MDM5LTcyNjVjMjdkMDU4ODYwYjJmZjg1MWJmMWQwYzQyOTYzZDJiNTYwNzY3MzFiMjQ1NmIwYWE2YjQ0NzdkYWFiMGQ) or check out the [issue section](https://github.com/uavpal/disco4g/issues) here on GitHub.\
+Join our [UAVPAL Slack workspace](https://join.slack.com/t/uavpal/shared_invite/enQtMzQ4NDA5NzU0MDM5LTcyNjVjMjdkMDU4ODYwYjJmZjg1MWJmMWQwYzQyOTYzZDJiNTYwNzY3MzFiMjQ1NmIwYWE2YjQ0NzdkYWFiMGQ) or check out the [issue section](https://github.com/uavpal/beboptwo4g/issues) here on GitHub.\
 Email: <img valign="bottom" src="https://image.ibb.co/mK4krx/uavpalmail2.png"> (please do not use email for issues/troubleshooting help. Join our Slack community instead!)
 
 ## Special Thanks to
@@ -112,6 +115,6 @@ Email: <img valign="bottom" src="https://image.ibb.co/mK4krx/uavpalmail2.png"> (
 - Phil
 
 ## Disclaimer
-This is still an EXPERIMENTAL modification, no thorough testing has been conducted! Mod and fly your Disco at YOUR OWN RISK!!!
+This is still an EXPERIMENTAL modification, no thorough testing has been conducted! Mod and fly your Bebop 2 at YOUR OWN RISK!!!
 
 
