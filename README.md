@@ -55,7 +55,7 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 *Hardware:*
 - Parrot Bebop 2 drone
 - Parrot Skycontroller 2 (Skycontroller 2P with the black joysticks is not yet supported!)\
-*Note:* the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in a special bundles.
+Note: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in a special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
 - [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) and SIM card\
