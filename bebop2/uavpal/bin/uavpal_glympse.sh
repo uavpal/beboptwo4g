@@ -36,7 +36,7 @@ apikey="`head -1 /data/ftp/uavpal/conf/glympse_apikey |tr -d '\r\n' |tr -d '\n'`
 		exit 0
 	fi
 
-ulogger -s -t uavpal_glympse "... reading Disco ID from avahi"
+ulogger -s -t uavpal_glympse "... reading Bebop 2 ID from avahi"
 droneName=$(cat /tmp/avahi/services/ardiscovery.service |grep name |cut -d '>' -f 2 |cut -d '<' -f 0)
 
 ulogger -s -t uavpal_glympse "... Glympse API: creating account"
@@ -72,13 +72,13 @@ if [ "$pb_access_token" != "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" ]; then
 	/data/ftp/uavpal/bin/curl -q -k -u ${pb_access_token}: -X POST https://api.pushbullet.com/v2/pushes --header 'Content-Type: application/json' --data-binary '{"type": "note", "title": "'"$title"'", "body": "'"$message"'"}'
 fi
 
-ulogger -s -t uavpal_glympse "... Glympse API: setting identifier to Disco ID"
+ulogger -s -t uavpal_glympse "... Glympse API: setting identifier to Bebop 2 ID"
 /data/ftp/uavpal/bin/curl -q -k -H "Content-Type: application/json" -H "Authorization: Bearer ${access_token}" -X POST -d "[{\"t\": $(date +%s)000, \"pid\": 0, \"n\": \"name\", \"v\": \"${droneName}\"}]" "https://api.glympse.com/v2/tickets/$ticket/append_data"
 
-ulogger -s -t uavpal_glympse "... Glympse API: setting Disco thumbnail image"
+ulogger -s -t uavpal_glympse "... Glympse API: setting Bebop 2 thumbnail image"
 /data/ftp/uavpal/bin/curl -q -k -H "Content-Type: application/json" -H "Authorization: Bearer ${access_token}" -X POST -d "[{\"t\": $(date +%s)000, \"pid\": 0, \"n\": \"avatar\", \"v\": \"https://uavpal.com/img/bebop2.png?$(date +%s)\"}]" "https://api.glympse.com/v2/tickets/$ticket/append_data"
 
-ulogger -s -t uavpal_glympse "... Glympse API: reading out Disco's GPS coordinates every 5 seconds to update Glympse via API"
+ulogger -s -t uavpal_glympse "... Glympse API: reading out Bebop 2's GPS coordinates every 5 seconds to update Glympse via API"
 while true
 do
    gps_nmea_out=$(grep GNRMC -m 1 /tmp/gps_nmea_out | cut -c4-)
