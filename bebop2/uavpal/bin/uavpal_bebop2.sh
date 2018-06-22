@@ -18,14 +18,14 @@ else
 fi
 ulogger -s -t uavpal_bebop2 "... detected Bebop 2 firmware version ${bebop_fw_version}, trying to use kernel modules compiled for firmware ${kernel_mods}"
 
-ulogger -s -t uavpal_disco "... loading tunnel kernel module (for zerotier)"
+ulogger -s -t uavpal_bebop2 "... loading tunnel kernel module (for zerotier)"
 insmod /data/ftp/uavpal/mod/${kernel_mods}/tun.ko
 
 ulogger -s -t uavpal_bebop2 "... loading E3372 firmware 21.x kernel modules (required for detection)"
 insmod /data/ftp/uavpal/mod/${kernel_mods}/usb_wwan.ko
 insmod /data/ftp/uavpal/mod/${kernel_mods}/option.ko
 
-ulogger -s -t uavpal_disco "... loading iptables kernel modules (required for security)"
+ulogger -s -t uavpal_bebop2 "... loading iptables kernel modules (required for security)"
 insmod /data/ftp/uavpal/mod/${kernel_mods}/iptable_filter.ko
 
 # Security: block incoming connections on the Internet interfaces (ppp* for E3372 firmware 21.x and eth1 for firmware 22.x)
