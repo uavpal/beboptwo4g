@@ -1,10 +1,4 @@
 #!/bin/sh
-for pid in $(pidof uavpal_bebop2.sh); do
-	if [ $pid != $$ ]; then
-		ulogger -s -t uavpal_bebop2 "... script is already running with PID $pid (exiting!)"
-		exit 1
-	  fi
-done
 
 ulogger -s -t uavpal_bebop2 "Huawei USB device detected"
 ulogger -s -t uavpal_bebop2 "=== Enabling LTE ==="
@@ -131,6 +125,4 @@ if [ ! -d "/data/lib/zerotier-one/networks.d" ]; then
 		fi
 	done
 fi
-ulogger -s -t uavpal_bebop2 "... looping to keep script alive. ugly, yes!"
 ulogger -s -t uavpal_bebop2 "*** idle on LTE ***"
-while true; do sleep 10; done
