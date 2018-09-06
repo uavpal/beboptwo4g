@@ -127,5 +127,4 @@ if [ ! -d "/data/lib/zerotier-one/networks.d" ]; then
 fi
 ulogger -s -t uavpal_bebop2 "... looping to keep script alive. ugly, yes!"
 ulogger -s -t uavpal_bebop2 "*** idle on LTE ***"
-while true; do sleep 10; done
 } &
