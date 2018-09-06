@@ -1,1 +1,2 @@
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", RUN+="/usr/bin/flock -n /tmp/lock/uavpal_bebop2 /data/ftp/uavpal/bin/uavpal_bebop2.sh"
+ACTION=="remove", SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", RUN+="/usr/bin/flock -n /tmp/lock/uavpal_unload /data/ftp/uavpal/bin/uavpal_unload.sh"

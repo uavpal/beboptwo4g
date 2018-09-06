@@ -1,5 +1,5 @@
 #!/bin/sh
-
+{
 ulogger -s -t uavpal_bebop2 "Huawei USB device detected"
 ulogger -s -t uavpal_bebop2 "=== Enabling LTE ==="
 
@@ -42,7 +42,7 @@ do
 done
 
 ulogger -s -t uavpal_bebop2 "... running usb_modeswitch"
-/data/ftp/uavpal/bin/usb_modeswitch -J -v 12d1 -p `lsusb |grep "ID 12d1" | cut -f 3 -d \:`
+/data/ftp/uavpal/bin/usb_modeswitch -J -v 12d1 -p `lsusb |grep "ID 12d1" | cut -f 3 -d \:` -s 3
 
 ulogger -s -t uavpal_bebop2 "... trying to detect 4G USB modem"
 while true
@@ -125,4 +125,7 @@ if [ ! -d "/data/lib/zerotier-one/networks.d" ]; then
 		fi
 	done
 fi
+ulogger -s -t uavpal_bebop2 "... looping to keep script alive. ugly, yes!"
 ulogger -s -t uavpal_bebop2 "*** idle on LTE ***"
+while true; do sleep 10; done
+} &
