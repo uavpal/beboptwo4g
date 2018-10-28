@@ -115,6 +115,7 @@ Email: <img valign="bottom" src="https://image.ibb.co/mK4krx/uavpalmail2.png"> (
 - [Joris Dirks](https://djoris.nl)
 - Josh Mason
 - Phil
+- Tim Vu
 
 ## Disclaimer
 This is still an EXPERIMENTAL modification, no thorough testing has been conducted! Mod and fly your Bebop 2 at YOUR OWN RISK!!!
