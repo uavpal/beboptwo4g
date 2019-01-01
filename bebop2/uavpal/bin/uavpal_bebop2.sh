@@ -1,130 +1,101 @@
 #!/bin/sh
 {
-ulogger -s -t uavpal_bebop2 "Huawei USB device detected"
-ulogger -s -t uavpal_bebop2 "=== Enabling LTE ==="
 
-bebop2_fw_version=`grep ro.parrot.build.uid /etc/build.prop | cut -d '-' -f 3`
-bebop2_fw_version_numeric=${bebop2_fw_version//.}
-if [ "$bebop2_fw_version_numeric" -ge "442" ]; then
+# variables
+initial_connection_timeout_seconds=20
+
+ulogger -s -t uavpal_drone "Huawei USB device detected"
+ulogger -s -t uavpal_drone "=== Loading uavpal softmod $(head -1 /data/ftp/uavpal/version.txt |tr -d '\r\n' |tr -d '\n') ==="
+	
+# set platform, evinrude=Disco, ardrone3=Bebop 2
+platform=$(grep 'ro.parrot.build.product' /etc/build.prop | cut -d'=' -f 2)
+drone_fw_version=$(grep 'ro.parrot.build.uid' /etc/build.prop | cut -d '-' -f 3)
+drone_fw_version_numeric=${drone_fw_version//.}
+
+if [ "$platform" == "evinrude" ]; then
+	drone_alias="Parrot Disco"
+	ncm_usb_if="usb0"
+	if [ "$drone_fw_version_numeric" -ge "170" ]; then
+		kernel_mods="1.7.0"
+	else
+		kernel_mods="1.4.1"
+	fi
+elif [ "$platform" == "ardrone3" ]; then
+	drone_alias="Parrot Bebop 2"
+	ncm_usb_if="usb"
 	kernel_mods="4.4.2"
 else
-	kernel_mods="na"
+	ulogger -s -t uavpal_drone "... current platform ${platform} is not supported by the softmod - exiting!"
+	exit 1
 fi
-ulogger -s -t uavpal_bebop2 "... detected Bebop 2 firmware version ${bebop_fw_version}, trying to use kernel modules compiled for firmware ${kernel_mods}"
 
-ulogger -s -t uavpal_bebop2 "... loading tunnel kernel module (for zerotier)"
+ulogger -s -t uavpal_drone "... detected ${drone_alias} (platform ${platform}), firmware version ${drone_fw_version}"
+ulogger -s -t uavpal_drone "... trying to use kernel modules compiled for firmware ${kernel_mods}"
+
+ulogger -s -t uavpal_drone "... loading tunnel kernel module (for zerotier)"
 insmod /data/ftp/uavpal/mod/${kernel_mods}/tun.ko
 
-ulogger -s -t uavpal_bebop2 "... loading E3372 firmware 21.x kernel modules (required for detection)"
+ulogger -s -t uavpal_drone "... loading USB modem kernel modules"
+insmod /data/ftp/uavpal/mod/${kernel_mods}/usbserial.ko                 # needed for Disco only
 insmod /data/ftp/uavpal/mod/${kernel_mods}/usb_wwan.ko
 insmod /data/ftp/uavpal/mod/${kernel_mods}/option.ko
 
-ulogger -s -t uavpal_bebop2 "... loading iptables kernel modules (required for security)"
-insmod /data/ftp/uavpal/mod/${kernel_mods}/iptable_filter.ko
+ulogger -s -t uavpal_drone "... loading iptables kernel modules (required for security)"
+insmod /data/ftp/uavpal/mod/${kernel_mods}/x_tables.ko                  # needed for Disco firmware <=1.4.1 only
+insmod /data/ftp/uavpal/mod/${kernel_mods}/ip_tables.ko                 # needed for Disco firmware <=1.4.1 only
+insmod /data/ftp/uavpal/mod/${kernel_mods}/iptable_filter.ko            # needed for Disco firmware <=1.4.1 and >=1.7.0 and Bebop 2 firmware >= 4.4.2
+insmod /data/ftp/uavpal/mod/${kernel_mods}/xt_tcpudp.ko                 # needed for Disco firmware <=1.4.1 only
 
-# Security: block incoming connections on the Internet interfaces (ppp* for E3372 firmware 21.x and eth1 for firmware 22.x)
+# Security: block incoming connections on the Internet interface
 # these connections should only be allowed on Wi-Fi (eth0) and via zerotier (zt*)
-ulogger -s -t uavpal_bebop2 "... applying iptables security rules"
-if_block='ppp+ eth1'
-for i in $if_block
-do
-	iptables -I INPUT -p tcp -i $i --dport 21 -j DROP      # inetd (ftp:/data/ftp)
-	iptables -I INPUT -p tcp -i $i --dport 23 -j DROP      # telnet
-	iptables -I INPUT -p tcp -i $i --dport 51 -j DROP      # inetd (ftp:/update)
-	iptables -I INPUT -p tcp -i $i --dport 61 -j DROP      # inetd (ftp:/data/ftp/internal_000/flightplans)
-	iptables -I INPUT -p tcp -i $i --dport 873 -j DROP     # rsync
-	iptables -I INPUT -p tcp -i $i --dport 8888 -j DROP    # dragon-prog
-	iptables -I INPUT -p tcp -i $i --dport 9050 -j DROP    # adb
-	iptables -I INPUT -p tcp -i $i --dport 44444 -j DROP   # dragon-prog
-	iptables -I INPUT -p udp -i $i --dport 67 -j DROP      # dnsmasq
-	iptables -I INPUT -p udp -i $i --dport 5353 -j DROP    # avahi-daemon
-	iptables -I INPUT -p udp -i $i --dport 14551 -j DROP   # dragon-prog
-done
+ulogger -s -t uavpal_drone "... applying iptables security rules"
+ip_block='21 23 51 61 873 8888 9050 44444 67 5353 14551'
+for i in $ip_block; do iptables -I INPUT -p tcp -i ${ncm_usb_if} --dport $i -j DROP; done
 
-ulogger -s -t uavpal_bebop2 "... running usb_modeswitch"
-/data/ftp/uavpal/bin/usb_modeswitch -J -v 12d1 -p `lsusb |grep "ID 12d1" | cut -f 3 -d \:` -s 3
+ulogger -s -t uavpal_drone "... running usb_modeswitch to switch Huawei modem into ncm mode"
+/data/ftp/uavpal/bin/usb_modeswitch -v 12d1 -p `lsusb |grep "ID 12d1" | cut -f 3 -d \:` --huawei-alt-mode -s 3
 
-ulogger -s -t uavpal_bebop2 "... trying to detect 4G USB modem"
-while true
-do
-	# -=-=-=-=-= Hi-Link Mode =-=-=-=-=-
-	if [ -d "/proc/sys/net/ipv4/conf/eth1" ]; then
-		huawei_mode="hilink"
-		ulogger -s -t uavpal_bebop2 "... detected Huawei USB modem in Hi-Link mode"
-		ulogger -s -t uavpal_bebop2 "... unloading E3372 firmware 21.x kernel modules (not required as Hi-Link was detected)"
-		rmmod option
-		rmmod usb_wwan
-		ulogger -s -t uavpal_bebop2 "... bringing up Hi-Link network interface"
-		ifconfig eth1 up
-		ulogger -s -t uavpal_bebop2 "... requesting IP address from modem's DHCP server"
-		hilink_ip=`udhcpc -i eth1 -n -t 10 2>&1 |grep obtained | awk '{ print $4 }'`
-		hilink_router_ip=$(echo `echo $hilink_ip | cut -d '.' -f 1,2,3`.1)
-		ulogger -s -t uavpal_bebop2 "... setting IP and route"
-		ifconfig eth1 ${hilink_ip} netmask 255.255.255.0
-		ip route add default via ${hilink_router_ip} dev eth1
-		ulogger -s -t uavpal_bebop2 "... enabling Hi-Link DMZ mode (1:1 NAT for better zerotier performance)"
-		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/ftp/uavpal/lib
-		sessionInfo=`/data/ftp/uavpal/bin/curl -s -X GET "http://${hilink_router_ip}/api/webserver/SesTokInfo"`
-		cookie=`echo "$sessionInfo" | grep "SessionID=" | cut -b 10-147`
-		token=`echo "$sessionInfo" | grep "TokInfo" | cut -b 10-41`
-		/data/ftp/uavpal/bin/curl -s -X POST "http://${hilink_router_ip}/api/security/dmz" -d "<request><DmzStatus>1</DmzStatus><DmzIPAddress>${hilink_ip}</DmzIPAddress></request>" -H "Cookie: $cookie" -H "__RequestVerificationToken: $token"
-		ulogger -s -t uavpal_bebop2 "... starting hilink script to inform SC2 of drone's WAN IP"
-		/data/ftp/uavpal/bin/uavpal_hilink.sh ${hilink_router_ip} &
-		break 1 # break out of while loop
-	fi
+until [ -d "/proc/sys/net/ipv4/conf/${ncm_usb_if}" ] && [ -c "/dev/ttyUSB0" ]; do usleep 100000; done
+ulogger -s -t uavpal_drone "... detected Huawei USB modem in ncm mode"
 
-	# -=-=-=-=-= Stick Mode =-=-=-=-=-
-	if [ -c "/dev/ttyUSB0" ]; then
-		huawei_mode="stick"
-		ulogger -s -t uavpal_bebop2 "... detected Huawei USB modem in Stick mode"
-		ulogger -s -t uavpal_bebop2 "... loading ppp kernel modules"
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/crc-ccitt.ko
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/slhc.ko
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/ppp_generic.ko
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/ppp_async.ko
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/ppp_deflate.ko
-		insmod /data/ftp/uavpal/mod/${kernel_mods}/bsd_comp.ko
-		ulogger -s -t uavpal_bebop2 "... running pppd to connect to LTE network"
-		LD_PRELOAD=/data/ftp/uavpal/lib/libpam.so.0:/data/ftp/uavpal/lib/libpcap.so.0.8:/data/ftp/uavpal/lib/libaudit.so.1 /data/ftp/uavpal/bin/pppd call lte
-		break 1 # break out of while loop
-	fi
-	sleep 1
-done
+ulogger -s -t uavpal_drone "... starting connection manager script"
+/data/ftp/uavpal/bin/uavpal_connmgr.sh ${ncm_usb_if} &
 
-ulogger -s -t uavpal_bebop2 "... setting DNS servers statically (to Google)"
-echo -e 'nameserver 8.8.8.8\nnameserver 8.8.4.4' >/etc/resolv.conf
-
-ulogger -s -t uavpal_bebop2 "... waiting for Internet connection"
+ulogger -s -t uavpal_drone "... waiting for public Internet connection"
 while true; do
 	if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
-		ulogger -s -t uavpal_bebop2 "... Internet connection is up"
+		ulogger -s -t uavpal_drone "... public Internet connection is up"
 		break # break out of loop
 	fi
 done
 
-ulogger -s -t uavpal_bebop2 "... setting date/time using ntp"
+ulogger -s -t uavpal_drone "... setting date/time using ntp"
 ntpd -n -d -q
 
-ulogger -s -t uavpal_bebop2 "... starting glympse script for GPS tracking"
-/data/ftp/uavpal/bin/uavpal_glympse.sh $huawei_mode &
+ulogger -s -t uavpal_drone "... starting glympse script for GPS tracking"
+/data/ftp/uavpal/bin/uavpal_glympse.sh &
 
-ulogger -s -t uavpal_bebop2 "... starting zerotier daemon"
+if [ -d "/data/lib/zerotier-one/networks.d" ] && [ ! -f "/data/lib/zerotier-one/networks.d/$(head -1 /data/ftp/uavpal/conf/zt_networkid |tr -d '\r\n' |tr -d '\n').conf" ]; then
+	ulogger -s -t uavpal_drone "... zerotier config's network ID does not match zt_networkid config - removing zerotier data directory to allow join of new network ID"
+	rm -rf /data/lib/zerotier-one 2>/dev/null
+fi
+
+ulogger -s -t uavpal_drone "... starting zerotier daemon"
 /data/ftp/uavpal/bin/zerotier-one -d
 
 if [ ! -d "/data/lib/zerotier-one/networks.d" ]; then
-	ulogger -s -t uavpal_bebop2 "... (initial-)joining zerotier network ID"
+	ulogger -s -t uavpal_drone "... (initial-)joining zerotier network ID"
 	while true
 	do
 		ztjoin_response=`/data/ftp/uavpal/bin/zerotier-one -q join $(head -1 /data/ftp/uavpal/conf/zt_networkid |tr -d '\r\n' |tr -d '\n')`
 		if [ "`echo $ztjoin_response |head -n1 |awk '{print $1}')`" == "200" ]; then
-			ulogger -s -t uavpal_bebop2 "... successfully joined zerotier network ID"
+			ulogger -s -t uavpal_drone "... successfully joined zerotier network ID"
 			break # break out of loop
 		else
-			ulogger -s -t uavpal_bebop2 "... ERROR joining zerotier network ID: $ztjoin_response - trying again"
+			ulogger -s -t uavpal_drone "... ERROR joining zerotier network ID: $ztjoin_response - trying again"
 			sleep 1
 		fi
 	done
 fi
-ulogger -s -t uavpal_bebop2 "... looping to keep script alive. ugly, yes!"
-ulogger -s -t uavpal_bebop2 "*** idle on LTE ***"
+ulogger -s -t uavpal_drone "*** idle on LTE ***"
 } &

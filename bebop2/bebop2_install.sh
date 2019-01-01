@@ -12,10 +12,6 @@ echo "Remounting filesystem as read/write"
 mount -o remount,rw /
 echo "Modifying rcS init script for softmod"
 sed -i 's/exit 0/\/data\/ftp\/uavpal\/bin\/uavpal_usbmode.sh \&\nexit 0/g' /etc/init.d/rcS
-echo "Creating ppp directory"
-mkdir -p /etc/ppp/peers
-echo "Creating symlink for ppp-lte settings"
-ln -s /data/ftp/uavpal/conf/lte /etc/ppp/peers/lte 2>&1 |grep -v 'File exists'
 echo "Creating symlink udev rule"
 ln -s /data/ftp/uavpal/conf/70-huawei-e3372.rules /lib/udev/rules.d/70-huawei-e3372.rules 2>&1 |grep -v 'File exists'
 echo "Creating symlink for ntpd's config file"
