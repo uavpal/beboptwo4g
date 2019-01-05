@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "=== Uninstalling BebopTwo4G on Bebop 2 ==="
+echo "=== Uninstalling UAVPAL softmod on Bebop 2 ==="
 echo "Remounting filesystem as read/write"
 mount -o remount,rw /
 echo "Reverting rcS init script"

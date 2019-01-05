@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "=== Installing BebopTwo4G on Bebop 2 ==="
+echo "=== Installing UAVPAL softmod on Bebop 2 ==="
 echo "Copying softmod files to target directory"
 cp -fr /tmp/beboptwo4g/bebop2/uavpal /data/ftp/internal_000
 echo "Creating symlink for /data/ftp/uavpal"
