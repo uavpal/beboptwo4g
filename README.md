@@ -59,7 +59,7 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 ## Requirements
 *Hardware:*
 - Parrot Bebop 2 / Parrot Bebop 2 Power drone
-- Parrot Skycontroller 2 (Skycontroller 2P with the black joysticks is in [Beta](https://uavpal.com/bebop2/faq#beta))\
+- Parrot Skycontroller 2 (silver joysticks) or Skycontroller 2P (black joysticks)\
 Note: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
@@ -79,7 +79,8 @@ Note: there are different Huawei E3372 models available - please read [this FAQ 
 - 4G/LTE USB Modem: Huawei E3372s-153, E3372h-153, E3372h-510, E3372h-607
 - USB-connected device with FreeFlight Pro App: iOS 11 - 12, most Android devices
 - Parrot Bebop 2, Firmware 4.4.2 to 4.7.1
-- Parrot Skycontroller 2, Firmware 1.0.7 to 1.0.9
+- Parrot Skycontroller 2 (silver joysticks), Firmware 1.0.7 to 1.0.9
+- Parrot Skycontroller 2P (black joysticks), Firmware 1.0.3 to 1.0.5
 - FreeFlight Pro 5.2.0 - 5.2.2 on iOS and Android
 
 [Drop us a note](https://github.com/uavpal/beboptwo4g/#contactcontribute) if you have successfully tested different configurations, so we can keep this list updated.
