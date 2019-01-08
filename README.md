@@ -76,7 +76,7 @@ Note: there are different Huawei E3372 models available - please read [this FAQ 
 
 *<a name="supportedhw">Successfully tested using:</a>*
 - Mobile tethering device: iPhone X (iOS 11.3)
-- 4G/LTE USB Modem: Huawei E3372s-153, E3372h-153, E3372h-510, E3372h-607
+- 4G/LTE USB Modem: Huawei E3372h-153, E3372h-510, E3372h-607
 - USB-connected device with FreeFlight Pro App: iOS 11 - 12, most Android devices
 - Parrot Bebop 2, Firmware 4.4.2 to 4.7.1
 - Parrot Skycontroller 2 (silver joysticks), Firmware 1.0.7 to 1.0.9
