@@ -58,7 +58,7 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 
 ## Requirements
 *Hardware:*
-- Parrot Bebop 2 / Parrot Bebop 2 Power drone
+- [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal)
 - Parrot Skycontroller 2 (silver joysticks) or Skycontroller 2P (black joysticks)\
 Note: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
