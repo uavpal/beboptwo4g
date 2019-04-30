@@ -4,7 +4,7 @@
 ## About
 BebopTwo4G is a software modification (softmod) for the Parrot Bebop 2 drone. Instead of the built-in regular Wi-Fi, it allows to use a 4G/LTE cellular/mobile network connection to link Skycontroller 2 to the Bebop 2. Control/telemetry and live video stream are routed through the 4G/LTE connection. In other words, range limit becomes your imagination! Ok, to be fair, it's still limited by the battery capacity :stuck_out_tongue_winking_eye:
 
-![BebopTwo4G softmod](https://preview.ibb.co/jiV2ud/bebop2_4g_josh.jpg)
+![BebopTwo4G softmod](http://uavpal.com/img/beboptwo4glte.jpg)
 
 Pros:
 - Range limit is no longer dependent on Wi-Fi signal
