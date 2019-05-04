@@ -14,6 +14,11 @@ Pros:
 - Allows independent real-time GPS tracking via [Glympse](https://www.glympse.com/get-glympse-app/)
 - Easy initiation of 4G/LTE connection via Skycontroller 2 button
 - Can be used for manually controlled flights as well as flight plans
+- :new: Videos and photos can be recorded to a [microSD card inside the 4G modem](https://uavpal.com/bebop2/faq#sdcard)
+   - More storage space available than the built-in 8 GB: great for longer flights or multiple flights where videos cannot be transferred to a PC immediately.
+   - No more long transfer time required from the Bebop 2 to a PC (usually done via USB cable or Wi-Fi).
+   - Saves battery power (and reduces charging cycles long-term) as videos don't have to be transferred on a battery-powered drone.
+   - The microSD card can be unplugged after the flight and plugged into a PC - the pilot can watch the video immediately without having to transfer anything first.
 
 Cons:
 - Dependent on [4G/LTE mobile network coverage](https://en.wikipedia.org/wiki/List_of_countries_by_4G_LTE_penetration) 
@@ -52,7 +57,7 @@ Note: The mobile device running FreeFlight Pro (the one connected to Skycontroll
 
 [ZeroTier](https://zerotier.com) is a free online service, which we use to manage the connection between Bebopp 2 and Skycontroller 2. This allows to do NAT traversal which is required due to the mobile tethering device and even some modems. Whether direct 4G/LTE-internal connections are allowed depends on your mobile network operator. ZeroTier allows to connect Skycontroller 2 to your Bebop p2 via an encrypted channel, regardless of the network topology.
 
-Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App for iOS/Android, allows independent real-time GPS tracking and shows [detailed telemetry data](https://uavpal.com/bebop2/faq#whyglympse) (signal strength, altitude, speed, compass, battery and latency) of the Bebop 2 via 4G/LTE. This can be particularly useful to recover the Disco in the unfortunate event of a crash or flyaway.
+Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App for iOS/Android, allows independent real-time GPS tracking and shows [detailed telemetry data](https://uavpal.com/bebop2/faq#whyglympse) (signal strength, altitude, speed, compass, battery and latency) of the Bebop 2 via 4G/LTE. This can be particularly useful to recover the Bebop 2 in the unfortunate event of a crash or flyaway.
 
 ![Glympse App showing Bebop 2's location](https://image.ibb.co/kwt4bn/discoglympse.png)
 
