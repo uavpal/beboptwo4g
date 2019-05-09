@@ -53,7 +53,7 @@ The "Power" LED on Skycontroller 2 will change to solid blue once the 4G/LTE con
 
 Once up in the air, everything works in the same manner as with the stock Wi-Fi connection, e.g. flight plans, return-to-home (auto-initiated in case of connection loss), etc.
 
-Note: The mobile device running FreeFlight Pro (the one connected to Skycontroller 2 via USB) can even be the same as the mobile tethering device/phone.
+The mobile device running FreeFlight Pro (the one connected to Skycontroller 2 via USB) can even be the same as the mobile tethering device/phone.
 
 [ZeroTier](https://zerotier.com) is a free online service, which we use to manage the connection between Bebopp 2 and Skycontroller 2. This allows to do NAT traversal which is required due to the mobile tethering device and even some modems. Whether direct 4G/LTE-internal connections are allowed depends on your mobile network operator. ZeroTier allows to connect Skycontroller 2 to your Bebop p2 via an encrypted channel, regardless of the network topology.
 
@@ -65,11 +65,11 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 *Hardware:*
 - [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal)
 - Parrot Skycontroller 2 (silver joysticks) or Skycontroller 2P (black joysticks)\
-Note: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
+:warning: **Note**: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
 - [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) or [compatible](https://github.com/uavpal/beboptwo4g/wiki/FAQ#othermodems) and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings)\
-Note: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
+:warning: **Note**: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
 - USB OTG cable (Micro USB 2.0 Male to USB 2.0 Female, ca. 5-10 cm)
 - Mobile device/phone with Wi-Fi tethering and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings) (for best performance, use the same operator as the USB modem's SIM card)
 - PC with Wi-Fi (one-time, required for initial installation)
