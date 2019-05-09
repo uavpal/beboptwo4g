@@ -67,7 +67,8 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 - Skycontroller 2 (silver joysticks) with firmware 1.0.7 - 1.0.9 or\
 or
 - Skycontroller 2P (black joysticks) with firmware 1.0.3 - 1.0.5\
-:warning: **Note**: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
+:warning: **Note**: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.
+
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
 - [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) or [compatible](https://github.com/uavpal/beboptwo4g/wiki/FAQ#othermodems) and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings)\
