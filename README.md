@@ -14,7 +14,7 @@ Pros:
 - Allows independent real-time GPS tracking via [Glympse](https://www.glympse.com/get-glympse-app/)
 - Easy initiation of 4G/LTE connection via Skycontroller 2 button
 - Can be used for manually controlled flights as well as flight plans
-- :new: Videos and photos can be recorded to a [microSD card inside the 4G modem](https://uavpal.com/bebop2/faq#sdcard)
+- :boom: Videos and photos can be recorded to a [microSD card inside the 4G modem](https://uavpal.com/bebop2/faq#sdcard)
    - More storage space available than the built-in 8 GB: great for longer flights or multiple flights where videos cannot be transferred to a PC immediately.
    - No more long transfer time required from the Bebop 2 to a PC (usually done via USB cable or Wi-Fi).
    - Saves battery power (and reduces charging cycles long-term) as videos don't have to be transferred on a battery-powered drone.
