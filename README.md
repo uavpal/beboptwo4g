@@ -66,7 +66,7 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 - [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal) with firmware 4.4.2 to 4.7.1
 - Skycontroller 2 (silver joysticks) with firmware 1.0.7 - 1.0.9 or\
 or
-- Skycontroller 2P (black joysticks) with firmware 1.0.3 - 1.0.5
+- Skycontroller 2P (black joysticks) with firmware 1.0.3 - 1.0.5\
 :warning: **Note**: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
