@@ -63,32 +63,23 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 
 ## Requirements
 *Hardware:*
-- [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal)
-- Parrot Skycontroller 2 (silver joysticks) or Skycontroller 2P (black joysticks)\
+- [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal) with firmware 4.4.2 to 4.7.1
+- Skycontroller 2 (silver joysticks) with firmware 1.0.7 - 1.0.9 or\
+or
+- Skycontroller 2P (black joysticks) with firmware 1.0.3 - 1.0.5
 :warning: **Note**: the softmod will not work with the classic Skycontroller, which was sold with the Bebop 2 in special bundles.\
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
 - [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) or [compatible](https://github.com/uavpal/beboptwo4g/wiki/FAQ#othermodems) and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings)\
 :warning: **Note**: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
 - USB OTG cable (Micro USB 2.0 Male to USB 2.0 Female, ca. 5-10 cm)
-- Mobile device/phone with Wi-Fi tethering and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings) (for best performance, use the same operator as the USB modem's SIM card)
+- Mobile device/phone with Wi-Fi tethering and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings) (for best performance, use the same operator as the USB modem's SIM card). Most recent iOS and Android devices work fine.
 - PC with Wi-Fi (one-time, required for initial installation)
 
 *Software:*
-- FreeFlight Pro App on tablet/phone (can be the same device providing Wi-Fi tethering)
+- FreeFlight Pro App on iOS or Android (can be the same device providing Wi-Fi tethering)
 - Zerotier account (free)
 - Glympse App for independent real-time GPS tracking (optional) - free Glympse Developer account required
-
-*<a name="supportedhw">Successfully tested using:</a>*
-- Mobile tethering device: iPhone X (iOS 11.3)
-- 4G/LTE USB Modem: Huawei E3372h-153, E3372h-510, E3372h-607
-- USB-connected device with FreeFlight Pro App: iOS 11 - 12, most Android devices
-- Parrot Bebop 2, Firmware 4.4.2 to 4.7.1
-- Parrot Skycontroller 2 (silver joysticks), Firmware 1.0.7 to 1.0.9
-- Parrot Skycontroller 2P (black joysticks), Firmware 1.0.3 to 1.0.5
-- FreeFlight Pro 5.2.0 - 5.2.4 on iOS and Android
-
-[Drop us a note](https://github.com/uavpal/beboptwo4g/#contactcontribute) if you have successfully tested different configurations, so we can keep this list updated.
 
 ## Installation
 Please see Wiki article [Installation](https://github.com/uavpal/beboptwo4g/wiki/Installation).
