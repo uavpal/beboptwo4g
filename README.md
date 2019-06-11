@@ -70,7 +70,14 @@ This gives you
 
 ## Requirements
 *Hardware:*
-- [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal) with firmware 4.4.2 to 4.7.1
+- [Parrot Bebop 2](https://www.parrot.com/us/drones/parrot-bebop-2) / [Parrot Bebop 2 Power](https://www.parrot.com/us/drones/parrot-bebop-2-power-pack-fpv) / [Parrot Bebop-Pro Thermal](https://www.parrot.com/business-solutions-us/parrot-professional/parrot-bebop-pro-thermal#parrot-bebop-pro-thermal) with firmware 4.4.2 to 4.7.1 <details><summary>**Buy now!**</summary>
+   Parrot Bebop 2 white\
+      &nbsp;&nbsp;&nbsp;&nbsp;[Order fom Amazon ~US$350.00](https://amzn.to/2K90gwg)\
+   &nbsp;  
+   Parrot Bebop 2 red\
+      &nbsp;&nbsp;&nbsp;&nbsp;[Order fom Amazon ~US$350.00](https://amzn.to/31hbwfc)
+</details>
+
 - Skycontroller 2 (silver joysticks) with firmware 1.0.7 - 1.0.9 or\
 or
 - Skycontroller 2P (black joysticks) with firmware 1.0.3 - 1.0.5\
