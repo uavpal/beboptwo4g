@@ -78,9 +78,15 @@ or
 
 ![Skycontroller Classic is not supported by the softmod](https://uavpal.com/img/sc1.jpg)
 
-- [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) or [compatible](https://github.com/uavpal/beboptwo4g/wiki/FAQ#othermodems) and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings)\
+- [Huawei E3372 4G USB modem](https://consumer.huawei.com/en/mobile-broadband/e3372/specs/) or [compatible](https://github.com/uavpal/beboptwo4g/wiki/FAQ#othermodems) and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings)
+
+![Huawei E3372h Modem](https://uavpal.com/img/e3372-modem.jpg)
+
 :warning: **Note**: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
 - USB OTG cable (Micro USB 2.0 Male to USB 2.0 Female, ca. 5-10 cm)
+
+![USB OTG Cable for Parrot Bebop 2](https://uavpal.com/img/usbotg_cable_bebop2.jpg)
+
 - Mobile device/phone with Wi-Fi tethering and [SIM card](https://uavpal.com/bebop2/wiki/Known-Working-Mobile-Carriers-and-Settings) (for best performance, use the same operator as the USB modem's SIM card). Most recent iOS and Android devices work fine.
 - PC with Wi-Fi (one-time, required for initial installation)
 
