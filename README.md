@@ -62,7 +62,7 @@ Additionally, [Glympse](https://www.glympse.com/get-glympse-app/), a free App fo
 
 This gives you
 - More storage space available than the built-in 32 GB: great for longer flights or multiple flights where videos cannot be transferred to a PC immediately.
-- No more long transfer time required from the Disco to a PC (usually done via USB cable or Wi-Fi).
+- No more long transfer time required from the Bebop 2 to a PC (usually done via USB cable or Wi-Fi).
 - Saves battery power (and reduces charging cycles long-term) as videos don't have to be transferred on a battery-powered CHUCK.
 - The microSD card can be unplugged after the flight and plugged into a PC - the pilot can watch the video immediately without having to transfer anything first.
 
