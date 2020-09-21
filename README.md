@@ -99,6 +99,8 @@ or
 
 :warning: **Note**: there are different Huawei E3372 models available - please read [this FAQ entry](https://github.com/uavpal/beboptwo4g/wiki/FAQ#e3372models) before buying to ensure your mobile network operator is supported.
 
+:warning: **Note**: the newer E3372h-**320** model does not work with the softmod currently. Some sellers on Amazon advertise the E3372h-320 as E3372h-153! 
+
 - USB OTG cable (Micro USB 2.0 Male to USB 2.0 Female, ca. 5-10 cm) <details><summary>**Buy now!**</summary>
    [Order from AliExpress ~US$1.00](http://s.click.aliexpress.com/e/1x8jjpe)\
    [Order fom Amazon ~US$5.50](https://amzn.to/2Iw0gmC)
